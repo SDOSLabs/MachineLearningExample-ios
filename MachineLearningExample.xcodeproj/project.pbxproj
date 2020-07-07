@@ -7,23 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C371F1F824B32DCB00EF8180 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C371F1F724B32DCB00EF8180 /* ViewController.xib */; };
 		C383AF9424B2FFBE0002FA38 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C383AF9324B2FFBE0002FA38 /* AppDelegate.swift */; };
-		C383AF9624B2FFBE0002FA38 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C383AF9524B2FFBE0002FA38 /* SceneDelegate.swift */; };
 		C383AF9824B2FFBE0002FA38 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C383AF9724B2FFBE0002FA38 /* ViewController.swift */; };
-		C383AF9B24B2FFBE0002FA38 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C383AF9924B2FFBE0002FA38 /* Main.storyboard */; };
-		C383AF9D24B2FFC30002FA38 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C383AF9C24B2FFC30002FA38 /* Assets.xcassets */; };
 		C383AFA024B2FFC30002FA38 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C383AF9E24B2FFC30002FA38 /* LaunchScreen.storyboard */; };
+		C3C9BA3F24B34F26006CBF49 /* CameraError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C9BA3E24B34F26006CBF49 /* CameraError.swift */; };
+		C3C9BA4124B357AB006CBF49 /* AlertControllerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C9BA4024B357AB006CBF49 /* AlertControllerError.swift */; };
+		C3C9BA4424B35807006CBF49 /* CameraPermissionDeniedAlertControllerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C9BA4324B35807006CBF49 /* CameraPermissionDeniedAlertControllerError.swift */; };
+		C3C9BA4624B3582D006CBF49 /* VideoCaptureNotFoundAlertControllerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C9BA4524B3582D006CBF49 /* VideoCaptureNotFoundAlertControllerError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C371F1F724B32DCB00EF8180 /* ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
 		C383AF9024B2FFBE0002FA38 /* MachineLearningExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MachineLearningExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C383AF9324B2FFBE0002FA38 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C383AF9524B2FFBE0002FA38 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		C383AF9724B2FFBE0002FA38 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C383AF9A24B2FFBE0002FA38 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C383AF9C24B2FFC30002FA38 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C383AF9F24B2FFC30002FA38 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C383AFA124B2FFC30002FA38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C3C9BA3E24B34F26006CBF49 /* CameraError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraError.swift; sourceTree = "<group>"; };
+		C3C9BA4024B357AB006CBF49 /* AlertControllerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertControllerError.swift; sourceTree = "<group>"; };
+		C3C9BA4324B35807006CBF49 /* CameraPermissionDeniedAlertControllerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPermissionDeniedAlertControllerError.swift; sourceTree = "<group>"; };
+		C3C9BA4524B3582D006CBF49 /* VideoCaptureNotFoundAlertControllerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCaptureNotFoundAlertControllerError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,11 +43,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C31C8B4A24B4665400F7E1B4 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				C383AF9C24B2FFC30002FA38 /* Assets.xcassets */,
+				C383AF9924B2FFBE0002FA38 /* Main.storyboard */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
 		C383AF8724B2FFBE0002FA38 = {
 			isa = PBXGroup;
 			children = (
 				C383AF9224B2FFBE0002FA38 /* MachineLearningExample */,
 				C383AF9124B2FFBE0002FA38 /* Products */,
+				C31C8B4A24B4665400F7E1B4 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -57,14 +73,24 @@
 			isa = PBXGroup;
 			children = (
 				C383AF9324B2FFBE0002FA38 /* AppDelegate.swift */,
-				C383AF9524B2FFBE0002FA38 /* SceneDelegate.swift */,
 				C383AF9724B2FFBE0002FA38 /* ViewController.swift */,
-				C383AF9924B2FFBE0002FA38 /* Main.storyboard */,
-				C383AF9C24B2FFC30002FA38 /* Assets.xcassets */,
+				C371F1F724B32DCB00EF8180 /* ViewController.xib */,
+				C3C9BA3E24B34F26006CBF49 /* CameraError.swift */,
+				C3C9BA4224B357EE006CBF49 /* AlertControllerErrors */,
 				C383AF9E24B2FFC30002FA38 /* LaunchScreen.storyboard */,
 				C383AFA124B2FFC30002FA38 /* Info.plist */,
 			);
 			path = MachineLearningExample;
+			sourceTree = "<group>";
+		};
+		C3C9BA4224B357EE006CBF49 /* AlertControllerErrors */ = {
+			isa = PBXGroup;
+			children = (
+				C3C9BA4024B357AB006CBF49 /* AlertControllerError.swift */,
+				C3C9BA4324B35807006CBF49 /* CameraPermissionDeniedAlertControllerError.swift */,
+				C3C9BA4524B3582D006CBF49 /* VideoCaptureNotFoundAlertControllerError.swift */,
+			);
+			path = AlertControllerErrors;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,9 +151,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C371F1F824B32DCB00EF8180 /* ViewController.xib in Resources */,
 				C383AFA024B2FFC30002FA38 /* LaunchScreen.storyboard in Resources */,
-				C383AF9D24B2FFC30002FA38 /* Assets.xcassets in Resources */,
-				C383AF9B24B2FFBE0002FA38 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,7 +165,10 @@
 			files = (
 				C383AF9824B2FFBE0002FA38 /* ViewController.swift in Sources */,
 				C383AF9424B2FFBE0002FA38 /* AppDelegate.swift in Sources */,
-				C383AF9624B2FFBE0002FA38 /* SceneDelegate.swift in Sources */,
+				C3C9BA3F24B34F26006CBF49 /* CameraError.swift in Sources */,
+				C3C9BA4624B3582D006CBF49 /* VideoCaptureNotFoundAlertControllerError.swift in Sources */,
+				C3C9BA4424B35807006CBF49 /* CameraPermissionDeniedAlertControllerError.swift in Sources */,
+				C3C9BA4124B357AB006CBF49 /* AlertControllerError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,15 +311,18 @@
 		C383AFA524B2FFC30002FA38 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = Y5G9RYLF8Y;
 				INFOPLIST_FILE = MachineLearningExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sdos.MachineLearningExample;
+				PRODUCT_BUNDLE_IDENTIFIER = com.santillana.iphone.unoiphone.sdos.dev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "match Development com.santillana.iphone.unoiphone.sdos.dev";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -300,15 +331,18 @@
 		C383AFA624B2FFC30002FA38 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = Y5G9RYLF8Y;
 				INFOPLIST_FILE = MachineLearningExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sdos.MachineLearningExample;
+				PRODUCT_BUNDLE_IDENTIFIER = com.santillana.iphone.unoiphone.sdos.dev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "match Development com.santillana.iphone.unoiphone.sdos.dev";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
