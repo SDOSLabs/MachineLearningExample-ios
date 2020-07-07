@@ -15,6 +15,8 @@ class ViewController: UIViewController {
     typealias FailedBlock = (CameraError) -> Void
     
     private let session = AVCaptureSession()
+    private let videoDataOutput = AVCaptureVideoDataOutput()
+    private let videoDataQueue = DispatchQueue(label: "VideoDataQueue", qos: .userInteractive)
     private var cameraPreviewLayer: AVCaptureVideoPreviewLayer?
     
     @IBOutlet weak var detectedObjectLabel: UILabel!
@@ -125,11 +127,18 @@ class ViewController: UIViewController {
             session.addInput(input)
         }
         
+        if session.canAddOutput(videoDataOutput) {
+            videoDataOutput.alwaysDiscardsLateVideoFrames = true
+            videoDataOutput.setSampleBufferDelegate(self, queue: videoDataQueue)
+            session.addOutput(videoDataOutput)
+        }
+        
         session.commitConfiguration()
         session.startRunning()
     }
     
     private func stopCaptureSession() {
+        videoDataOutput.setSampleBufferDelegate(nil, queue: nil)
         session.stopRunning()
         session.inputs.forEach { session.removeInput($0) }
     }
@@ -151,6 +160,14 @@ class ViewController: UIViewController {
         let alert = UIAlertController(title: alertError.title, message: alertError.message, preferredStyle: alertError.style)
         alertError.actions.forEach { alert.addAction($0) }
         present(alert, animated: true, completion: nil)
+    }
+}
+
+extension ViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
+    
+    func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
+        guard let pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else { return }
+        // TODO: process pixelBuffer
     }
 }
 
