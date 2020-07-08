@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import Vision
 
 class ViewController: UIViewController {
     
@@ -18,6 +19,25 @@ class ViewController: UIViewController {
     private let videoDataOutput = AVCaptureVideoDataOutput()
     private let videoDataQueue = DispatchQueue(label: "VideoDataQueue", qos: .userInteractive)
     private var cameraPreviewLayer: AVCaptureVideoPreviewLayer?
+    
+    private lazy var classificationRequest: VNCoreMLRequest = {
+        do {
+            let model = try VNCoreMLModel(for: MobileNet().model)
+            let request = VNCoreMLRequest(model: model) { [weak self] request, error in
+                if let error = error {
+                    print("Vision request error: \(error.localizedDescription)")
+                }
+                
+                let prediction = self?.processClassification(for: request)
+                DispatchQueue.main.async { self?.detectedObjectLabel.text = prediction }
+            }
+            
+            request.imageCropAndScaleOption = .centerCrop
+            return request
+        } catch {
+            fatalError("Failed to load ML model: \(error)")
+        }
+    }()
     
     @IBOutlet weak var detectedObjectLabel: UILabel!
     
@@ -122,6 +142,7 @@ class ViewController: UIViewController {
         }
 
         session.beginConfiguration()
+        session.sessionPreset = .vga640x480
         
         if session.canAddInput(input) {
             session.addInput(input)
@@ -141,6 +162,7 @@ class ViewController: UIViewController {
         videoDataOutput.setSampleBufferDelegate(nil, queue: nil)
         session.stopRunning()
         session.inputs.forEach { session.removeInput($0) }
+        session.outputs.forEach { session.removeOutput($0) }
     }
     
     // MARK: - Background/Foreground notification methods
@@ -163,11 +185,43 @@ class ViewController: UIViewController {
     }
 }
 
+// MARK: - AVCaptureVideoDataOutputSampleBufferDelegate
+
 extension ViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
     
     func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
         guard let pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else { return }
-        // TODO: process pixelBuffer
+        let image = CIImage(cvImageBuffer: pixelBuffer)
+        let exifOrientation = UIDevice.current.exifOrientation()
+        classify(image: image, orientation: exifOrientation)
+    }
+}
+
+// MARK: - Classification methods
+
+extension ViewController {
+    
+    private func classify(image: CIImage, orientation: CGImagePropertyOrientation) {
+        let handler = VNImageRequestHandler(ciImage: image, orientation: orientation)
+        do {
+            try handler.perform([classificationRequest])
+        } catch {
+            print("Failed to perform classification: \(error.localizedDescription)")
+        }
+    }
+    
+    private func processClassification(for request: VNRequest) -> String {
+        guard let results = request.results,
+            let classifications = results as? [VNClassificationObservation],
+            !classifications.isEmpty else {
+                return "Nothing detected"
+        }
+        
+        // return the best 3 results
+        return classifications
+            .prefix(3)
+            .map { "[\(Int($0.confidence * 100))%] \($0.identifier)" }
+            .joined(separator: "\n")
     }
 }
 

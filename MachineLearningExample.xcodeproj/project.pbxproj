@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C31148BE24B4810500FFE428 /* UIDevice+ExifOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31148BD24B4810500FFE428 /* UIDevice+ExifOrientation.swift */; };
+		C31C8B4C24B4762A00F7E1B4 /* MobileNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = C31C8B4B24B4762A00F7E1B4 /* MobileNet.mlmodel */; };
 		C371F1F824B32DCB00EF8180 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C371F1F724B32DCB00EF8180 /* ViewController.xib */; };
 		C383AF9424B2FFBE0002FA38 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C383AF9324B2FFBE0002FA38 /* AppDelegate.swift */; };
 		C383AF9824B2FFBE0002FA38 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C383AF9724B2FFBE0002FA38 /* ViewController.swift */; };
@@ -18,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C31148BD24B4810500FFE428 /* UIDevice+ExifOrientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+ExifOrientation.swift"; sourceTree = "<group>"; };
+		C31C8B4B24B4762A00F7E1B4 /* MobileNet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MobileNet.mlmodel; sourceTree = "<group>"; };
 		C371F1F724B32DCB00EF8180 /* ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
 		C383AF9024B2FFBE0002FA38 /* MachineLearningExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MachineLearningExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C383AF9324B2FFBE0002FA38 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -75,10 +79,12 @@
 				C383AF9324B2FFBE0002FA38 /* AppDelegate.swift */,
 				C383AF9724B2FFBE0002FA38 /* ViewController.swift */,
 				C371F1F724B32DCB00EF8180 /* ViewController.xib */,
+				C31148BD24B4810500FFE428 /* UIDevice+ExifOrientation.swift */,
 				C3C9BA3E24B34F26006CBF49 /* CameraError.swift */,
 				C3C9BA4224B357EE006CBF49 /* AlertControllerErrors */,
 				C383AF9E24B2FFC30002FA38 /* LaunchScreen.storyboard */,
 				C383AFA124B2FFC30002FA38 /* Info.plist */,
+				C31C8B4B24B4762A00F7E1B4 /* MobileNet.mlmodel */,
 			);
 			path = MachineLearningExample;
 			sourceTree = "<group>";
@@ -165,8 +171,10 @@
 			files = (
 				C383AF9824B2FFBE0002FA38 /* ViewController.swift in Sources */,
 				C383AF9424B2FFBE0002FA38 /* AppDelegate.swift in Sources */,
+				C31148BE24B4810500FFE428 /* UIDevice+ExifOrientation.swift in Sources */,
 				C3C9BA3F24B34F26006CBF49 /* CameraError.swift in Sources */,
 				C3C9BA4624B3582D006CBF49 /* VideoCaptureNotFoundAlertControllerError.swift in Sources */,
+				C31C8B4C24B4762A00F7E1B4 /* MobileNet.mlmodel in Sources */,
 				C3C9BA4424B35807006CBF49 /* CameraPermissionDeniedAlertControllerError.swift in Sources */,
 				C3C9BA4124B357AB006CBF49 /* AlertControllerError.swift in Sources */,
 			);
@@ -315,7 +323,7 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = Y5G9RYLF8Y;
 				INFOPLIST_FILE = MachineLearningExample/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -335,7 +343,7 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = Y5G9RYLF8Y;
 				INFOPLIST_FILE = MachineLearningExample/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
