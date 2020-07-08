@@ -328,9 +328,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.santillana.iphone.unoiphone.sdos.dev;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sdos.machinelearningexample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "match Development com.santillana.iphone.unoiphone.sdos.dev";
+				PROVISIONING_PROFILE_SPECIFIER = "match Development com.sdos.machinelearningexample";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -348,9 +348,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.santillana.iphone.unoiphone.sdos.dev;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sdos.machinelearningexample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "match Development com.santillana.iphone.unoiphone.sdos.dev";
+				PROVISIONING_PROFILE_SPECIFIER = "match Development com.sdos.machinelearningexample";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
