@@ -2,7 +2,7 @@
 Ejemplo de uso de Core ML + Vision para integración de Machine Learning en iOS.
 
 # Versión Xcode
-Se ha compilado con la versión 11.3.
+Se ha compilado con la versión 11.5.
 
 # Versión mínima de iOS
 La versión mínima es iOS 12 debido al tipo de modelo de Machine Learning que se ha utilizado en el ejemplo. Para modelos no optimizados se puede utilizar iOS 11 o superior.
